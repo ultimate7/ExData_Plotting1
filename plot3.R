@@ -11,7 +11,7 @@ dat$Sub_metering_2=as.numeric(dat$Sub_metering_2)
 dat$Sub_metering_3=as.numeric(dat$Sub_metering_3)
 
 plot(dat$Sub_metering_1~dat$Time,type="l",col="black",xlab="",ylab="Energy sub metering")
-lines(dat$Sub_metering_2~dat$Time,type="l",col="red")
+lines(dat$Sub_metering_2/5~dat$Time,type="l",col="red")
 lines(dat$Sub_metering_3~dat$Time,type="l",col="blue")
 legend("topright", legend = names(dat)[7:9], col=c("black","blue","red"), pch=16)
 

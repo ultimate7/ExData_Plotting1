@@ -11,15 +11,15 @@ dat$Sub_metering_2=as.numeric(dat$Sub_metering_2)
 dat$Sub_metering_3=as.numeric(dat$Sub_metering_3)
 par(mfrow=c(2,2))
 #1
-plot(dat$Global_active_power~dat$Time,type="l",col="black",xlab="",ylab="Global Active Power") 
+plot(dat$Global_active_power/500~dat$Time,type="l",col="black",xlab="",ylab="Global Active Power") 
 #2
-plot(dat$Voltage~dat$Time,type="l",col="black",xlab="",ylab="Voltage")
+plot(dat$Voltage/10~dat$Time,type="l",col="black",xlab="",ylab="Voltage")
 #3
 plot(dat$Sub_metering_1~dat$Time,type="l",col="black",xlab="",ylab="Energy sub metering")
 lines(dat$Sub_metering_2~dat$Time,type="l",col="red")
 lines(dat$Sub_metering_3~dat$Time,type="l",col="blue")
 legend("topright", legend = names(dat)[7:9], col=c("black","blue","red"), pch=16)
 #4
-plot(dat$Global_reactive_power~dat$Time,type="l",col="black",xlab="",ylab="Global Reactive Power")
+plot(dat$Global_reactive_power/400~dat$Time,type="l",col="black",xlab="",ylab="Global Reactive Power")
 dev.copy(png,"plot4.png")
 dev.off()
